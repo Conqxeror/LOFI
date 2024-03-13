@@ -1,0 +1,17 @@
+.block{
+     width: 500px;
+     height: 600px;
+     background-color:#b380cc;
+     position: absolute;
+     top:55%;
+     left: 20%;
+     transform: translate(-50%,-50%);
+     border-radius: 20px;
+
+}
+.block h3{
+    padding: 20px 0px 0px 50px;
+}
+button{
+    margin-top: 15px;
+}
