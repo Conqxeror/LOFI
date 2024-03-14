@@ -13,7 +13,12 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+const corsOptions = {
+  origin: true, //included origin as true
+  credentials: true, //included credentials as true
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect("mongodb://127.0.0.1:27017/myproject");
 
@@ -48,7 +53,7 @@ app.post("/login", async (req, res) => {
     // cookie generate
     res.cookie("usercookie", token, {
       expires: new Date(Date.now() + 3600000),
-      httpOnly: true,
+      httpOnly: false,
     });
    
     const result = {

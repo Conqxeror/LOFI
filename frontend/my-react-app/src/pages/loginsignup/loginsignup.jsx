@@ -17,11 +17,12 @@ const Loginsignup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(formData),
       });
       const res=await data.json();
-      console.log(res)
-    
+      console.log(res);
+      localStorage.setItem( 'token' , res.result.token );
     } catch (error) {
       console.error('Error logging in:', error);
     }
